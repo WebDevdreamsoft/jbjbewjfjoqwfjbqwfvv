@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmallSocial - 2016 Vibe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Amisenchanté!.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Login/Signup Form -->
+        <div id="auth-section">
+            <h2>📸 SmallSocial</h2>
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="signUp()">Sign Up</button>
+            <button onclick="signIn()">Log In</button>
+        </div>
+
+        <!-- Main App (hidden until login) -->
+        <div id="app" style="display:none;">
+            <nav>
+                <h3>📸 SmallSocial</h3>
+                <button onclick="logout()">Logout</button>
+            </nav>
+
+            <!-- Upload Post -->
+            <div class="upload-area">
+                <input type="file" id="imageFile" accept="image/*">
+                <input type="text" id="caption" placeholder="Write a caption...">
+                <button onclick="uploadPost()">Share</button>
+            </div>
+
+            <!-- Feed -->
+            <div id="feed"></div>
+
+            <!-- DM Section -->
+            <div class="dm-section">
+                <h4>Direct Messages</h4>
+                <select id="userList"></select>
+                <div id="dmMessages"></div>
+                <input type="text" id="dmInput" placeholder="Send a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
